@@ -66,6 +66,25 @@ public class GuavaBaseTest {
 
         SPLITTER.split(confuse);
 
+        //List<String> strings = Splitter.on("L").splitToList("ETC3LUSDT");
+        Assert.assertEquals(Lists.newArrayList("ETC3L","USDT"),spliter("ETC3LUSDT"));
+        Assert.assertEquals(Lists.newArrayList("ETC3S","USDT"),spliter("ETC3SUSDT"));
+
+    }
+
+    private List<String> spliter(String s) {
+        String s1 = "";
+        String s2 = "";
+        if(s.contains("L")) {
+            String[] ls = s.split("L");
+             s1 = ls[0] + "L";
+             s2 = ls[1];
+        }else if(s.contains("S")) {
+            String[] ls = s.split("L");
+            s1 = ls[0] + "S";
+            s2 = ls[1];
+        }
+        return Lists.newArrayList(s1, s2);
     }
 
     @Test

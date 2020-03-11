@@ -11,7 +11,6 @@
     <dependencies>
 
 
-
         <!-- https://mvnrepository.com/artifact/net.sf.trove4j/trove4j -->
         <dependency>
             <groupId>net.sf.trove4j</groupId>
@@ -20,11 +19,11 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/it.unimi.dsi/fastutil -->
-       <!-- <dependency>
-            <groupId>it.unimi.dsi</groupId>
-            <artifactId>fastutil</artifactId>
-            <version>8.3.0</version>
-        </dependency>-->
+        <!-- <dependency>
+             <groupId>it.unimi.dsi</groupId>
+             <artifactId>fastutil</artifactId>
+             <version>8.3.0</version>
+         </dependency>-->
 
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
         <dependency>
@@ -33,29 +32,29 @@
             <version>4.4</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.google.collections/google-collections -->
-     <!--   <dependency>
-            <groupId>com.google.collections</groupId>
-            <artifactId>google-collections</artifactId>
-            <version>1.0</version>
-        </dependency>-->
+        <!--   <dependency>
+               <groupId>com.google.collections</groupId>
+               <artifactId>google-collections</artifactId>
+               <version>1.0</version>
+           </dependency>-->
         <!-- https://mvnrepository.com/artifact/com.goldmansachs/gs-collections -->
-       <!-- <dependency>
-            <groupId>com.goldmansachs</groupId>
-            <artifactId>gs-collections</artifactId>
-            <version>7.0.3</version>
-        </dependency>-->
+        <!-- <dependency>
+             <groupId>com.goldmansachs</groupId>
+             <artifactId>gs-collections</artifactId>
+             <version>7.0.3</version>
+         </dependency>-->
         <!-- https://mvnrepository.com/artifact/com.twitter/util-collection -->
-    <!--    <dependency>
-            <groupId>com.twitter</groupId>
-            <artifactId>util-collection_2.12</artifactId>
-            <version>19.1.0</version>
-        </dependency>-->
+        <!--    <dependency>
+                <groupId>com.twitter</groupId>
+                <artifactId>util-collection_2.12</artifactId>
+                <version>19.1.0</version>
+            </dependency>-->
         <!-- https://mvnrepository.com/artifact/com.facebook.jcommon/collections -->
-     <!--   <dependency>
-            <groupId>com.facebook.jcommon</groupId>
-            <artifactId>collections</artifactId>
-            <version>0.1.32</version>
-        </dependency>-->
+        <!--   <dependency>
+               <groupId>com.facebook.jcommon</groupId>
+               <artifactId>collections</artifactId>
+               <version>0.1.32</version>
+           </dependency>-->
 
         <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
         <dependency>
@@ -65,12 +64,12 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.google.guava/guava-tests -->
-       <!-- <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava-tests</artifactId>
-            <version>23.3-jre</version>
-            <scope>test</scope>
-        </dependency>-->
+        <!-- <dependency>
+             <groupId>com.google.guava</groupId>
+             <artifactId>guava-tests</artifactId>
+             <version>23.3-jre</version>
+             <scope>test</scope>
+         </dependency>-->
 
         <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
         <dependency>
@@ -128,10 +127,6 @@
         </dependency>
 
 
-
-
-
-
         <!-- https://mvnrepository.com/artifact/junit/junit -->
         <dependency>
             <groupId>junit</groupId>
@@ -148,14 +143,18 @@
         </dependency>
 
 
-
-
+        <!-- https://mvnrepository.com/artifact/org.latencyutils/LatencyUtils -->
+        <dependency>
+            <groupId>org.latencyutils</groupId>
+            <artifactId>LatencyUtils</artifactId>
+            <version>2.0.3</version>
+        </dependency>
 
 
     </dependencies>
 
     <build>
-        <finalName>interviews</finalName>
+        <finalName>common-practice</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -167,7 +166,24 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.0.3.RELEASE</version>
+                <configuration>
+                    <mainClass>org.lili.jdk.FileTest</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
-    </build>
+
+           </build>
 
 </project>

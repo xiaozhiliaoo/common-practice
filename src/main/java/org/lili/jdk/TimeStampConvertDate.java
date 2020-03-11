@@ -9,9 +9,11 @@ package org.lili.jdk;
 
 
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 public class TimeStampConvertDate {
     public static void main(String[] args) {
+        System.out.println(TimeUnit.MINUTES.toMillis(1));
         long now = System.currentTimeMillis();
         Date date = new Date(now);
         System.out.println(date);
