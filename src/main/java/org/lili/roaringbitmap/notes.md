@@ -10,9 +10,17 @@ https://en.wikipedia.org/wiki/Count-distinct_problem
 4 motifs in a DNA sequence,  
 5 elements of RFID/sensor networks.
 
-https://en.wikipedia.org/wiki/Run-length_encoding
+https://en.wikipedia.org/wiki/Bloom_filter
+可能在，绝对不在。false positive(假阳性-化验阳性，但是对肺部进行检查，实际没得) ，false negatives(假阴性-肯定得了，但是没检查出来)
+possibly in set" or "definitely" not in set
+https://en.wikipedia.org/wiki/Category:Probabilistic_data_structures
 
+https://en.wikipedia.org/wiki/Run-length_encoding
+https://en.wikipedia.org/wiki/Bitmap_index
 https://en.wikipedia.org/wiki/Cardinality_(SQL_statements)
+
+MySQL does not have bitmap indexes.
+MySQL只支持BTree和Hash索引，不支持位图索引：https://dev.mysql.com/doc/refman/8.0/en/create-index.html
 
 cardinal number
 
@@ -21,3 +29,13 @@ show index from table;索引中不重复记录预估值
 
 Engineering Fast Indexes for Big Data Applications:
 
+有40亿个无符号的整型数据，现在给定一个目标数字，判断这个数字是否在这40亿数据中?
+40亿个数据中出现过两次的数据？
+一个int 4 byte，10亿 4G，40亿 16G
+4 bytes存一个数字，现在位图4 bytes=32 bits存储了32个数字，16G/32=500M存储40亿
+2^32=4294967296
+2^64=18446744073709551616
+Java Integer.MAX_VALUE=(2^31)-1
+BMP位图文件-Bitmap-File
+
+10亿个字符串中出现一次的那个字符串？布隆过滤器
