@@ -45,7 +45,9 @@ https://oss.redislabs.com/redisbloom/
 BitSet,RoaringBitmap(压缩的BitSet)
 
 Membership problem：HashSet.constains, BitSet.get, Bloom Filter，Counting Bloom Filter(元素是否在一个集合中)
+
 Cardinality problem：HashSet.size, BitSet.cardinality, Linear counter，Log Log，HyperLogLog(集合不重复元素个数)
+
 Frequency problem：HashMap.put, HashMultiset.count, Count Sketch，Count-Min Sketch(集合元素某元素出现频率)
 
 
@@ -60,3 +62,6 @@ CS369G: Algorithmic Techniques for Big Data
 http://web.stanford.edu/class/cs369g/index.html
 
 PDSA:https://github.com/gakhov/pdsa
+
+https://github.com/addthis/stream-lib
+
