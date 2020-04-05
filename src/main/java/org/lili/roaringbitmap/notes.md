@@ -1,4 +1,4 @@
-cardinality 基数
+### roaringbitmap研究
 
 cardinality counting  基数计数：不重复元素个数
 
@@ -39,3 +39,24 @@ Java Integer.MAX_VALUE=(2^31)-1
 BMP位图文件-Bitmap-File
 
 10亿个字符串中出现一次的那个字符串？布隆过滤器
+https://redis.io/topics/data-types-intro#hyperloglogs
+https://oss.redislabs.com/redisbloom/
+
+BitSet,RoaringBitmap(压缩的BitSet)
+
+Membership problem：HashSet.constains, BitSet.get, Bloom Filter，Counting Bloom Filter(元素是否在一个集合中)
+Cardinality problem：HashSet.size, BitSet.cardinality, Linear counter，Log Log，HyperLogLog(集合不重复元素个数)
+Frequency problem：HashMap.put, HashMultiset.count, Count Sketch，Count-Min Sketch(集合元素某元素出现频率)
+
+
+https://www.youtube.com/watch?v=F7EhDBfsTA8
+Bloom Filter(set membership)
+Count-Min Sketch(count tracking-frequency)
+HyperLogLog(cardiality-unique vistor,)
+
+System Design Interview - Top K Problem (Heavy Hitters)
+ 
+CS369G: Algorithmic Techniques for Big Data
+http://web.stanford.edu/class/cs369g/index.html
+
+PDSA:https://github.com/gakhov/pdsa
