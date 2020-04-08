@@ -25,6 +25,14 @@
              <version>8.3.0</version>
          </dependency>-->
 
+        <!-- https://mvnrepository.com/artifact/it.unimi.dsi/fastutil -->
+        <dependency>
+            <groupId>it.unimi.dsi</groupId>
+            <artifactId>fastutil</artifactId>
+            <version>8.3.1</version>
+        </dependency>
+
+
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -204,6 +212,44 @@
             <artifactId>stream</artifactId>
             <version>2.9.8</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/net.openhft/hftc-api-jdk8 -->
+        <dependency>
+            <groupId>net.openhft</groupId>
+            <artifactId>hftc-api-jdk8</artifactId>
+            <version>0.5.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/net.openhft/hftc-impl-jdk8 -->
+        <dependency>
+            <groupId>net.openhft</groupId>
+            <artifactId>hftc-impl-jdk8</artifactId>
+            <version>0.5.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/net.sf.trove4j/trove4j -->
+        <dependency>
+            <groupId>net.sf.trove4j</groupId>
+            <artifactId>trove4j</artifactId>
+            <version>3.0.3</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/net.openhft/chronicle-map -->
+        <dependency>
+            <groupId>net.openhft</groupId>
+            <artifactId>chronicle-map</artifactId>
+            <version>3.19.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.openhft</groupId>
+            <artifactId>zero-allocation-hashing</artifactId>
+            <version>0.10.1</version>
+        </dependency>
+
+
+
+
 
 
 

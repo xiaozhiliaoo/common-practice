@@ -25,11 +25,12 @@ public class BitSetTest {
         System.out.println(bits2);
 
         for(int i = 0; i < 16; i++) {
+            //i是index，不是数字
             if((i % 2) == 0) bits1.set(i);
             if((i % 5) != 0) bits2.set(i);
         }
 
-        //8个true  cardinality 基数
+        //8个true  cardinality 基数  实现基于Long.bitCount
         System.out.println(bits1.cardinality());
         //12个true
         System.out.println(bits2.cardinality());

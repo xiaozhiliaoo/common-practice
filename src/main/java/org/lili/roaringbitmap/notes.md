@@ -1,6 +1,18 @@
-### roaringbitmap研究
+### roaringbitmap研究 A better compressed bitset
+
+roaringbitmap Daniel Lemire 作者博客：https://lemire.me/
+
+http://roaringbitmap.org/
 
 cardinality counting  基数计数：不重复元素个数
+
+Bitmap –> Linear Count –> LogLog Count –> Adaptive Count –> HyperLogLog Count
+
+http://www.cs.tau.ac.il/~ronitt/COURSES/F15sem/
+
+https://hkorte.github.io/slides/cmsketch/#/
+
+http://llimllib.github.io/bloomfilter-tutorial/
 
 https://en.wikipedia.org/wiki/Count-distinct_problem
 
@@ -30,10 +42,10 @@ show index from table;索引中不重复记录预估值
 Engineering Fast Indexes for Big Data Applications:
 
 有40亿个无符号的整型数据，现在给定一个目标数字，判断这个数字是否在这40亿数据中?
-40亿个数据中出现过两次的数据？
+40亿个数据中出现过两次的数据？如果是字符串呢？
 一个int 4 byte，10亿 4G，40亿 16G
 4 bytes存一个数字，现在位图4 bytes=32 bits存储了32个数字，16G/32=500M存储40亿
-2^32=4294967296
+2^32=4294967296=42亿
 2^64=18446744073709551616
 Java Integer.MAX_VALUE=(2^31)-1
 BMP位图文件-Bitmap-File
