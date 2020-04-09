@@ -247,6 +247,12 @@
             <version>0.10.1</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.github.kiprobinson</groupId>
+            <artifactId>bigfraction</artifactId>
+            <version>1.1.0</version>
+        </dependency>
+
 
 
 
