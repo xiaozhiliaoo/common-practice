@@ -18,5 +18,9 @@ public class BigDecimalTest {
         String s = new BigDecimal(34777370)
                 .divide(new BigDecimal(Math.pow(10, 8)), 4, RoundingMode.DOWN).toPlainString();
         System.out.println(s);
+
+        String sss = "12765.665500000000";
+        BigDecimal s1 = new BigDecimal(sss);
+        System.out.println(s1.stripTrailingZeros().toPlainString());
     }
 }
