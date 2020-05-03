@@ -10,7 +10,19 @@ import java.util.List;
  * @description
  * @notes
  */
+class Person {
 
+    private int id;
+
+    public Person(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return false;
+    }
+}
 
 public class ListTest {
     public static void main(String[] args) {
@@ -21,6 +33,14 @@ public class ListTest {
         list.add(null);
         list.add(null);
         System.out.println(removeNullElement(list));
+
+        List<Person> people = new ArrayList<>();
+        Person p1 = new Person(2);
+        people.add(p1);
+        System.out.println(people.contains(p1)); //fasle
+        System.out.println(people.size());
+        System.out.println(people.get(0));
+
     }
 
     private static List<String> removeNullElement(List<String> list) {
