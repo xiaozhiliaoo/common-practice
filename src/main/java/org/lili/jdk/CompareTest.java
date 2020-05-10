@@ -40,7 +40,18 @@ public class CompareTest {
         User u1 = new User(1,"lili1");
         User u2 = new User(99911,"lili2");
         User u3 = new User(1111119,"lili3");
-        ArrayList<User> users = Lists.newArrayList(u1, u2, u3);
+        User u4 = new User(2,"lili3");
+        ArrayList<User> users = Lists.newArrayList(u1, u2, u3, u4);
+
+        users.sort(Comparator.comparingInt(User::getId));
+
+        for (User user : users) {
+            System.out.println(user.getId());
+        }
+
+        System.out.println(users);
+
+
         Optional<Integer> max = users.stream().map(User::getId).max(Comparator.naturalOrder());
         System.out.println(max.get());
 

@@ -22,5 +22,10 @@ public class StringTest {
         System.out.println(split.get(1));
         System.out.println(split);
 
+
+        String app = "eeee%s...%s";
+        System.out.println(String.format(app, "1", "2"));
+
+
     }
 }
