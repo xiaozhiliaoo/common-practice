@@ -1,7 +1,9 @@
 package org.lili.jdk;
 
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import org.apache.commons.lang3.StringUtils;
+import org.junit.Test;
 
 import java.util.*;
 
@@ -14,36 +16,47 @@ import java.util.*;
 
 public class Main {
 
-    private static int page=10;
 
     public static final Integer LIMITEND = 5;
+
+    private static final int PAGE_NUM = 5000;
+
+    @Test
+    public void test() throws InterruptedException {
+        Runnable task = () -> {
+            System.out.println("lilil");
+        };
+        task.run();
+    }
+
 
 
     public static void main(String[] args) {
 
+        ArrayList<String> strings = Lists.newArrayList("22", "33", "44", "55");
 
-        System.out.println(Integer.valueOf(StringUtils.defaultIfBlank("1111", "0")));
-
-        //size=10 sum=99 index:0,10,20,30,40
-        int count =100;
-        int num = count % LIMITEND == 0 ? count / LIMITEND : (count / LIMITEND) + 1 ;
-        System.out.println(num);
-
-        List<Integer> s = new ArrayList<>();
-        for (int i = 0; i < num; i++) {
-            s.add(i*LIMITEND);
+        for (String string : strings) {
+            if (string.equals("22")) {
+                continue;
+            }
+            System.out.println(string);
         }
-        System.out.println(s);
 
-        System.out.println(createPageNumMap(101));
+
+        createPageNumMap(113472);
     }
 
-    private static Map<Integer, Integer> createPageNumMap(Integer sum) {
-        int count = sum % page;
-        Map<Integer,Integer> map = new TreeMap<>();
-        for (int i = 0,j=1; i < count; i+=count) {
-            map.put(i,i+count);
+    private static void createPageNumMap(Integer sum) {
+        List<Integer> pageIndex = new LinkedList<>();
+        //页数
+        int page = (sum % PAGE_NUM) == 0 ? sum / PAGE_NUM : (sum / PAGE_NUM) + 1;
+        for (int i = 0; i < page; i++) {
+            if(i == 0) {
+                pageIndex.add(0);
+            }else {
+                pageIndex.add(i*PAGE_NUM);
+            }
         }
-        return map;
+        System.out.println(pageIndex);
     }
 }

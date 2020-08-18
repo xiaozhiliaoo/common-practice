@@ -22,43 +22,17 @@ import java.util.HashMap;
 public class StressTest {
 
     @Benchmark
-    @OperationsPerInvocation(3)
-    @Threads(5)
-    public JSONObject httpPost() {
-        OkHttpClient client = new OkHttpClient();
-
-        String url = "http://localhost:9666/finance/get_charge_address";
-        HashMap<String, Object> dataMap = new HashMap<String, Object>();
-        dataMap.put("symbol", "eth");
-        String jsonStr = JSON.toJSONString(dataMap);
-        System.out.println("参数：" + jsonStr);
-        MediaType mediaType = MediaType.parse("application/json");
-        RequestBody body = RequestBody.create(mediaType, jsonStr);
-        Request request = new Request.Builder()
-                .url(url)
-                .post(body)
-                .addHeader("Content-Type", "application/json")
-                .build();
-
-        JSONObject jsonObj = null;
-        try {
-            Response response = client.newCall(request).execute();
-            jsonObj = JSONObject.parseObject(response.body().string());
-//			if("200".equals(jsonObj.get("code"))) {
-//				System.out.println(jsonObj.get("message"));
-//			}
-            System.out.println("返回：" + jsonObj.toJSONString());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return jsonObj;
+    @OperationsPerInvocation(1)
+    @Threads(1)
+    public void httpPost() {
+        System.out.println("1111");
     }
 
     public static void main(String[] args) throws RunnerException {
         Options opt = new OptionsBuilder()
                 .include(StressTest.class.getSimpleName())
-                .warmupIterations(5)
-                .measurementIterations(5)
+                .warmupIterations(1)
+                .measurementIterations(1)
                 .build();
         new Runner(opt).run();
     }

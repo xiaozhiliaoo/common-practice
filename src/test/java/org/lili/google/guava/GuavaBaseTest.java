@@ -54,7 +54,7 @@ public class GuavaBaseTest {
         long elapsedMill = stopwatch.elapsed(TimeUnit.MILLISECONDS);
         System.out.println(elapsedMill);
         //human readable format
-        System.out.println(stopwatch.toString());
+        System.out.println(stopwatch);
     }
 
     @Test
