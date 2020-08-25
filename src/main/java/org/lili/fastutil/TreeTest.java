@@ -1,5 +1,6 @@
 package org.lili.fastutil;
 
+import com.github.xiaozhiliaoo.refactor.Refactor;
 import it.unimi.dsi.fastutil.ints.IntRBTreeSet;
 
 /**
