@@ -1,5 +1,10 @@
 package org.lili.jdk;
 
+import com.google.common.collect.Lists;
+import org.junit.Test;
+
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -10,6 +15,13 @@ import java.util.Objects;
  */
 
 public class EnumTest {
+
+    @Test
+    public void testIt() {
+        List<String> strings = AutomaticMainSymbol.listConfigSymbol();
+        System.out.println(strings);
+    }
+
     public static void main(String[] args) {
         checkEnum(ClientSource.APP);
     }

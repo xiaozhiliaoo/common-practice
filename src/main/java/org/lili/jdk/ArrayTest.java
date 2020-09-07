@@ -3,8 +3,10 @@ package org.lili.jdk;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -18,6 +20,14 @@ import java.util.regex.Pattern;
 public class ArrayTest {
     @Test
     public void test() {
+
+        System.out.println(UUID.randomUUID().toString().replace("-","").substring(0,20));
+
+        BigDecimal one = new BigDecimal("34.5");
+        BigDecimal two = new BigDecimal("44.5");
+        one.add(two);
+        System.out.println(one);
+
         String[] ips = {"112.17.245.74", "128.1.48.108", "10.1.50.27", "10.1.24.167"};
         String ip = ips[ips.length - 2];
         System.out.println(ip);//10.1.50.27
