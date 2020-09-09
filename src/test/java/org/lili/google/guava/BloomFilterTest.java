@@ -28,12 +28,15 @@ public class BloomFilterTest {
         assertFalse(filter.mightContain(100));
     }
 
+
     @Test
     public void testInsert() {
         BloomFilter<Integer> filter = BloomFilter.create(Funnels.integerFunnel(), 5, 0.01);
         IntStream.range(0,100_000).forEach(filter::put);
+        filter.put(1_000_000);
         assertTrue(filter.mightContain(1));
         assertTrue(filter.mightContain(2));
+        assertTrue(filter.mightContain(3));
         assertTrue(filter.mightContain(3));
         assertTrue(filter.mightContain(1_000_000));
     }
