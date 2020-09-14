@@ -1,9 +1,14 @@
 package org.lili.apache.lang3;
 
+import com.google.common.collect.HashBiMap;
 import org.apache.commons.lang3.ObjectUtils;
+import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -35,5 +40,15 @@ public class ObjectUtilsTest {
         System.out.println(before2);
 
 
+    }
+
+
+    @Test
+    public void test() {
+        Map<String,String> map = new HashMap<>();
+        map.put("lili","555");
+        Map<String, String> stringStringMap = ObjectUtils.cloneIfPossible(map);
+        HashMap<String, String> stringStringMap1 = (HashMap<String, String>) stringStringMap;
+        System.out.println(stringStringMap1 == map);
     }
 }

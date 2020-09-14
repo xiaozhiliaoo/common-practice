@@ -1,5 +1,7 @@
 package org.lili.jdk;
 
+import com.google.common.collect.Lists;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
@@ -71,5 +73,15 @@ public class ArrayTest {
         }
 
         return ipStr;
+    }
+
+
+    @Test
+    public void test2() {
+        ArrayList<Object> objects = new ArrayList<>(5);
+        System.out.println(CollectionUtils.isEmpty(objects));
+        objects.add("4444");
+        System.out.println(CollectionUtils.isEmpty(objects));
+
     }
 }

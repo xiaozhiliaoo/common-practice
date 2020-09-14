@@ -36,6 +36,11 @@ public class MultisetTest {
         hits.add("10.124.22.19");
         assertEquals(2,hits.count("10.124.22.19"));
         assertEquals(0,hits.count("99.99.999.99"));
+        boolean contains = hits.contains("10.124.22.19");
+        System.out.println(contains);
+        System.out.println(hits.elementSet());
+
+        //后期有了怎么办？？？？？
 
         //epsilon, delta, random seed
         CountMinSketch cms = new CountMinSketch(0.001, 0.99, 1);

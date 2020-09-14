@@ -23,5 +23,8 @@ public class Test {
         data.setId(1);
         data.setName("name");
         System.out.println(JSON.toJSONString(data));
+        //hget  不一定就是json啊
+        Data data1 = JSON.parseObject("{'empty','emtpy'}", Data.class);
+        System.out.println(data1);
     }
 }
