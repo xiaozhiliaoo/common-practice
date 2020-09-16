@@ -2,6 +2,9 @@ package org.lili.jdk;
 
 import com.google.common.base.Splitter;
 import com.google.common.base.Strings;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.junit.Test;
 
 import java.util.List;
 import java.util.UUID;
@@ -27,5 +30,30 @@ public class StringTest {
         System.out.println(String.format(app, "1", "2"));
 
 
+    }
+
+
+    @Test
+    public void test() {
+        String name = null;
+        String age = null;
+        String id = "555";
+        System.out.println(isOnlyOneParams(name, age, id));
+    }
+
+    private static boolean isOnlyOneParams(final CharSequence... args) {
+        if (ArrayUtils.isEmpty(args)) {
+            return false;
+        }
+        int i = 0;
+        for (CharSequence arg : args) {
+            if(arg != null) {
+                i++;
+            }
+            if(i > 1) {
+                return false;
+            }
+        }
+        return true;
     }
 }

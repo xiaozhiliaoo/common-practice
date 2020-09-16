@@ -365,7 +365,26 @@
         </dependency>
 
 
+        <!-- https://mvnrepository.com/artifact/org.opendaylight.controller/threadpool-config-api -->
+        <dependency>
+            <groupId>org.opendaylight.controller</groupId>
+            <artifactId>threadpool-config-api</artifactId>
+            <version>0.13.3</version>
+        </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.tinygroup/threadpool -->
+        <dependency>
+            <groupId>org.tinygroup</groupId>
+            <artifactId>threadpool</artifactId>
+            <version>0.0.4</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.elasticsearch</groupId>
+            <artifactId>elasticsearch</artifactId>
+            <version>7.9.1</version>
+        </dependency>
 
     </dependencies>
 
