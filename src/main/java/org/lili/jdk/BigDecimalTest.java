@@ -16,10 +16,11 @@ import java.math.RoundingMode;
 public class BigDecimalTest {
 
     @Test
-    public void test2222() {
+    public void testIt() {
         BigDecimal one = new BigDecimal("34.5");
         BigDecimal two = new BigDecimal("44.5");
         System.out.println(one.add(two));
+        System.out.println(one);
     }
 
     @Test
