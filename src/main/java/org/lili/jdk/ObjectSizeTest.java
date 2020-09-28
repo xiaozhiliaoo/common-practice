@@ -10,7 +10,9 @@ import org.openjdk.jol.vm.VM;
 import sun.misc.Contended;
 
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static java.lang.System.out;
@@ -41,6 +43,46 @@ class SimpleLong {
 }
 
 class FieldsArrangement {
+    public boolean isFirst() {
+        return first;
+    }
+
+    public void setFirst(boolean first) {
+        this.first = first;
+    }
+
+    public char getSecond() {
+        return second;
+    }
+
+    public void setSecond(char second) {
+        this.second = second;
+    }
+
+    public double getThird() {
+        return third;
+    }
+
+    public void setThird(double third) {
+        this.third = third;
+    }
+
+    public int getFourth() {
+        return fourth;
+    }
+
+    public void setFourth(int fourth) {
+        this.fourth = fourth;
+    }
+
+    public boolean isFifth() {
+        return fifth;
+    }
+
+    public void setFifth(boolean fifth) {
+        this.fifth = fifth;
+    }
+
     private boolean first;
     private char second;
     private double third;
@@ -62,6 +104,16 @@ class Lock {
 
 
 public class ObjectSizeTest {
+
+    @Test
+    public void test5000000IntegerSize() {
+        List<Integer> integerList = new ArrayList<>();
+        for (int i = 0; i < 5000000; i++) {
+            integerList.add(i);
+        }
+        System.out.println(ObjectSizeCalculator.getObjectSize(integerList) / 1024 / 1024 + "MB");
+        System.out.println(ObjectSizeCalculator.getObjectSize(1) + "B");
+    }
 
     @Test
     public void testByte() {
