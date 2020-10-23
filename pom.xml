@@ -12,6 +12,7 @@
 
 
         <!-- https://mvnrepository.com/artifact/net.sf.trove4j/trove4j -->
+        <!--High performance collections for Java-->
         <dependency>
             <groupId>net.sf.trove4j</groupId>
             <artifactId>trove4j</artifactId>
@@ -103,6 +104,7 @@
         </dependency>
 
 
+        <!-- eclipse collections : https://www.eclipse.org/collections/#-->
         <dependency>
             <groupId>org.eclipse.collections</groupId>
             <artifactId>eclipse-collections-api</artifactId>
@@ -129,11 +131,13 @@
             <version>1.8</version>
         </dependency>
 
+        <!--Vavr is an object-functional library for Java 8+-->
         <dependency>
             <groupId>io.vavr</groupId>
             <artifactId>vavr</artifactId>
-            <version>0.9.0</version>
+            <version>1.0.0-alpha-3</version>
         </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
@@ -380,11 +384,21 @@
         </dependency>
 
 
+        <!--CopyOnWriteHashMap-->
         <dependency>
             <groupId>org.elasticsearch</groupId>
             <artifactId>elasticsearch</artifactId>
             <version>7.9.1</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/javax.enterprise.concurrent/javax.enterprise.concurrent-api -->
+        <dependency>
+            <groupId>javax.enterprise.concurrent</groupId>
+            <artifactId>javax.enterprise.concurrent-api</artifactId>
+            <version>1.1</version>
+            <scope>provided</scope>
+        </dependency>
+
 
     </dependencies>
 

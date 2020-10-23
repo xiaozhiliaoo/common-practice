@@ -2,6 +2,9 @@ package org.lili.google.guava;
 
 import com.google.common.collect.ForwardingSet;
 import com.google.common.collect.Sets;
+import org.junit.Test;
+
+import java.util.HashSet;
 
 /**
  * @author lili
@@ -11,7 +14,12 @@ import com.google.common.collect.Sets;
  */
 
 public class ForwardingSetTest {
-    public static void main(String[] args) {
-        ForwardingSet forwardingSet = null;
+    @Test
+    public void test() {
+        InstrumentedSet<String> instrumentedSet = new InstrumentedSet<>(new HashSet<>());
+        instrumentedSet.add("44");
+        instrumentedSet.add("445");
+        instrumentedSet.add("4454");
+        System.out.println(instrumentedSet.getAddCount());
     }
 }

@@ -34,4 +34,10 @@ public class StopWatchTest {
 
 
     }
+
+    @Test
+    public void getStart() {
+        Stopwatch started = Stopwatch.createStarted();
+        System.out.println(started.elapsed());
+    }
 }

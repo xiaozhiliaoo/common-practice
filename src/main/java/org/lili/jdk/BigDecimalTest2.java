@@ -11,6 +11,15 @@ import java.math.BigDecimal;
  * @notes
  */
 public class BigDecimalTest2 {
+
+
+    @Test
+    public void testCompare() {
+        BigDecimal decimal = new BigDecimal("45.66670000");
+        BigDecimal decimal2 = new BigDecimal("45.66670000");
+        System.out.println(decimal.compareTo(decimal2));
+    }
+
     @Test
     public void test() {
         BigDecimal bigDecimal = new BigDecimal("1");
