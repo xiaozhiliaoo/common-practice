@@ -51,4 +51,9 @@ public class ObjectUtilsTest {
         HashMap<String, String> stringStringMap1 = (HashMap<String, String>) stringStringMap;
         System.out.println(stringStringMap1 == map);
     }
+
+    @Test
+    public void test() {
+        ObjectUtils.
+    }
 }

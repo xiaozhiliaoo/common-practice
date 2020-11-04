@@ -1,6 +1,8 @@
 package org.lili.jdk;
 
 import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
+import lombok.ToString;
+import org.junit.Test;
 
 /**
  * @author lili
@@ -10,6 +12,14 @@ import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
  */
 
 public class ByteTest {
+
+    @Test
+    public void testInit() {
+        Byte b = new Byte("11");
+        System.out.println(b);
+    }
+
+
     public static void main(String[] args) {
 
         Byte a1 = new Byte("1");

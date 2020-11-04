@@ -23,6 +23,11 @@ public class TimeUnitTest {
         Assert.assertEquals(24 * 60 * 60 * 1000 * 30L, TimeUnit.DAYS.toMillis(30));
     }
 
+    @Test
+    public void test2() {
+
+    }
+
     public static void main(String[] args) {
         System.out.println(TimeUnit.DAYS.toMillis(1));
 

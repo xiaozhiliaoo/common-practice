@@ -2,18 +2,18 @@ package org.lili.jdk;
 
 import com.alibaba.fastjson.JSON;
 import com.carrotsearch.sizeof.RamUsageEstimator;
+import com.google.common.cache.CacheBuilder;
+import com.google.common.cache.LoadingCache;
 import com.google.common.collect.ImmutableMap;
 import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
 import org.junit.Test;
 import org.openjdk.jol.info.ClassLayout;
+import org.openjdk.jol.info.GraphLayout;
 import org.openjdk.jol.vm.VM;
 import sun.misc.Contended;
 
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static java.lang.System.out;
 
@@ -106,6 +106,16 @@ class Lock {
 public class ObjectSizeTest {
 
     @Test
+    public void testSize() {
+    }
+
+    @Test
+    public void testCache() {
+        out.println(ClassLayout.parseInstance(new HashMap<>()).instanceSize());
+        out.println(VM.current().sizeOf(new HashMap<>()));
+    }
+
+    @Test
     public void test5000000IntegerSize() {
         List<Integer> integerList = new ArrayList<>();
         for (int i = 0; i < 5000000; i++) {
@@ -113,6 +123,10 @@ public class ObjectSizeTest {
         }
         System.out.println(ObjectSizeCalculator.getObjectSize(integerList) / 1024 / 1024 + "MB");
         System.out.println(ObjectSizeCalculator.getObjectSize(1) + "B");
+        System.out.println(GraphLayout.parseInstance(integerList).toFootprint());
+        System.out.println(GraphLayout.parseInstance(integerList).totalCount());
+        System.out.println(GraphLayout.parseInstance(integerList).totalSize());
+
     }
 
     @Test

@@ -1,5 +1,6 @@
 package org.lili.jdk;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Collection;
@@ -43,7 +44,7 @@ public class HashMapTest {
 
     @Test
     public void test() {
-        Person person = new Person(45,"alibaba");
+        Person person = new Person(45, "alibaba");
         System.out.println(person);
     }
 
@@ -55,6 +56,10 @@ public class HashMapTest {
         hash.put("11", "22");
         hash.put("111", "23");
         hash.put("1111", "234");
+        //entrySet遍历方法
+        hash.entrySet().parallelStream().forEach(x -> {
+            System.out.println(x.getKey() + x.getValue());
+        });
         System.out.println(hash);
         Set<String> strings = hash.keySet();
 
@@ -69,5 +74,64 @@ public class HashMapTest {
         System.out.println(hash);
 
 
+    }
+
+    @Test
+    public void tableSizeFor() {
+        Assert.assertEquals(1, tableSizeFor(-4));
+        Assert.assertEquals(1, tableSizeFor(0));
+        Assert.assertEquals(1, tableSizeFor(1));
+        Assert.assertEquals(2, tableSizeFor(2));
+        Assert.assertEquals(4, tableSizeFor(3));
+        Assert.assertEquals(8, tableSizeFor(7));
+        Assert.assertEquals(16, tableSizeFor(11));
+        Assert.assertEquals(16, tableSizeFor(12));
+        Assert.assertEquals(16, tableSizeFor(13));
+        Assert.assertEquals(16, tableSizeFor(15));
+        Assert.assertEquals(32, tableSizeFor(17));
+    }
+
+    @Test
+    public void hash() {
+        System.out.println();
+        System.out.println((32 - 1) & hash("stff"));
+        System.out.println((16 - 1) & hash("stff"));
+        System.out.println((8 - 1) & hash("stff"));
+        System.out.println((4 - 1) & hash("stff"));
+        System.out.println((4 - 1) & hash("stff4"));
+        System.out.println((4 - 1) & hash("stff5"));
+        System.out.println((4 - 1) & hash("4ttttffvvv"));
+    }
+
+    static final int MAXIMUM_CAPACITY = 1 << 30;
+
+
+    static final int tableSizeFor(int cap) {
+        int n = cap - 1;
+        n |= n >>> 1;
+        n |= n >>> 2;
+        n |= n >>> 4;
+        n |= n >>> 8;
+        n |= n >>> 16;
+        return (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
+    }
+
+
+    static final int hash(Object key) {
+        int h;
+        //hashCode 异或  hashCode无符号右移16位
+        return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
+    }
+
+
+    @Test
+    public void putVal() {
+        HashMap<String, String> hash = new HashMap<>();
+        System.out.println(hash.put("1", "21"));
+        System.out.println(hash.put("1", "21"));
+        System.out.println(hash.put("11", "22"));
+        System.out.println(hash.put("111", "23"));
+        System.out.println(hash.put("111", "23"));
+        System.out.println(hash.put("1111", "234"));
     }
 }
