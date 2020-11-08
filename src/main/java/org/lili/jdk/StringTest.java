@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.IntStream;
 
 /**
  * @author lili
@@ -30,6 +31,15 @@ public class StringTest {
         System.out.println(String.format(app, "1", "2"));
 
 
+    }
+
+    @Test
+    public void codePoints() {
+        IntStream intStream = "alibaba".codePoints();
+        intStream.forEach(System.out::println);
+        System.out.println("--------------------------");
+        IntStream chars = "alibaba".chars();
+        chars.forEach(System.out::println);
     }
 
 

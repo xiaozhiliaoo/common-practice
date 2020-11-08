@@ -17,6 +17,18 @@ public class ByteTest {
     public void testInit() {
         Byte b = new Byte("11");
         System.out.println(b);
+
+        Byte aByte = Byte.valueOf("33");
+        System.out.println(aByte.byteValue());
+        System.out.println(aByte.shortValue());
+        System.out.println(aByte.intValue());
+        System.out.println(aByte.longValue());
+        System.out.println(aByte.floatValue());
+        System.out.println(aByte.doubleValue());
+
+        //NumberFormatException
+        Byte bByte = Byte.valueOf("3333");
+
     }
 
 

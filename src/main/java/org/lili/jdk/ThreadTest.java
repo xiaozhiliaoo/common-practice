@@ -1,7 +1,6 @@
 package org.lili.jdk;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
-import org.apache.commons.lang3.concurrent.BasicThreadFactory;
 import org.junit.Test;
 
 import java.util.concurrent.*;
@@ -44,7 +43,7 @@ public class ThreadTest {
     public static void executeWithCompanyId(Integer companyId, Runnable runnable) {
         otcSendMessageExecutor.execute(() -> {
             CompanyUtils.setCompanyId(companyId);
-            System.out.println("before:"+companyId);
+            System.out.println("before:" + companyId);
             runnable.run();
             System.out.println(CompanyUtils.getCompanyId());
             CompanyUtils.remove();
@@ -52,7 +51,7 @@ public class ThreadTest {
         });
 
         otcSendMessageExecutor.execute(() -> {
-            System.out.println("before:"+CompanyUtils.getCompanyId());
+            System.out.println("before:" + CompanyUtils.getCompanyId());
             runnable.run();
             System.out.println(CompanyUtils.getCompanyId());
             //CompanyUtils.remove();
@@ -144,5 +143,26 @@ public class ThreadTest {
         Thread pcAdminUpdate2 = new Thread(new Task());
         pcAdminUpdate2.setName("LiLi");
         pcAdminUpdate2.start();
+    }
+
+
+    @Test
+    public void testSleel() {
+        try {
+            Thread.sleep(5000000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public synchronized void testWait() throws InterruptedException {
+        wait();
+    }
+
+
+    @Test
+    public synchronized void testWait2() throws InterruptedException {
+        "111".wait();
     }
 }
