@@ -362,11 +362,11 @@
 
 
         <!-- https://mvnrepository.com/artifact/jsr94/jsr94 -->
-        <dependency>
+        <!--<dependency>
             <groupId>jsr94</groupId>
             <artifactId>jsr94</artifactId>
             <version>1.1</version>
-        </dependency>
+        </dependency>-->
 
 
         <!-- https://mvnrepository.com/artifact/org.opendaylight.controller/threadpool-config-api -->
@@ -419,8 +419,9 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.7.0</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>14</source>
+                    <target>14</target>
+                    <release>14</release>
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>

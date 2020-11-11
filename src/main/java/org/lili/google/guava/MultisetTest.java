@@ -6,7 +6,7 @@ import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
 import com.google.common.hash.BloomFilter;
 import com.google.common.hash.Funnels;
-import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
+//import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
 import lombok.extern.log4j.Log4j2;
 import org.junit.Test;
 
@@ -57,7 +57,7 @@ public class MultisetTest {
             uuids.add(UUID.randomUUID().toString());
         }
         //heap占用很大,并且速度很慢
-        log.info("uuids cost:{}ms, memory size:{}MB", stopwatch.elapsed(TimeUnit.MILLISECONDS), ObjectSizeCalculator.getObjectSize(uuids) / 1024 / 1024);
+//        log.info("uuids cost:{}ms, memory size:{}MB", stopwatch.elapsed(TimeUnit.MILLISECONDS), ObjectSizeCalculator.getObjectSize(uuids) / 1024 / 1024);
 
         //top 10,top visitor,word count,any kind of frequency tracking,NLP,heavy-hitters,range-query
         CountMinSketch cmsuuids = new CountMinSketch(0.001, 0.99, 1);
@@ -66,7 +66,7 @@ public class MultisetTest {
             cmsuuids.add(UUID.randomUUID().toString(),1);
         }
         //速度和内存取决于CountMinSketch参数配置
-        log.info("cmsuuids cost:{}ms, memory size:{}MB", stopwatch2.elapsed(TimeUnit.MILLISECONDS), ObjectSizeCalculator.getObjectSize(cmsuuids) / 1024 / 1024);
+//        log.info("cmsuuids cost:{}ms, memory size:{}MB", stopwatch2.elapsed(TimeUnit.MILLISECONDS), ObjectSizeCalculator.getObjectSize(cmsuuids) / 1024 / 1024);
 
     }
 }

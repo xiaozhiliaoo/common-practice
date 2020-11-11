@@ -5,7 +5,6 @@ import com.google.common.hash.HashCode;
 import com.google.common.hash.Hashing;
 import lombok.Data;
 import org.junit.Test;
-import sun.nio.cs.UTF_32BE;
 
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;

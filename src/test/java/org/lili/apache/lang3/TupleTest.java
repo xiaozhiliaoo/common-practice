@@ -1,7 +1,7 @@
 package org.lili.apache.lang3;
 
-import javafx.util.Pair;
 import org.apache.commons.lang3.tuple.MutableTriple;
+import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.lang3.tuple.Triple;
 import org.junit.Test;
 
@@ -17,7 +17,7 @@ public class TupleTest {
 
     @Test
     public void testPair() {
-        Pair<String, String> pair = new Pair<>("name", "lili");
+        Pair<String, String> pair = Pair.of("11","22");
         List<Pair<String,String>> pairs = new ArrayList<>();
 
     }

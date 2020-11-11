@@ -2,7 +2,7 @@ package org.lili.jdk;
 
 import com.clearspring.analytics.stream.cardinality.HyperLogLog;
 import com.google.common.base.Stopwatch;
-import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
+//import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
 import lombok.extern.log4j.Log4j2;
 import org.junit.Test;
 
@@ -39,14 +39,14 @@ public class HashSetCountTest {
             uuids.add(UUID.randomUUID().toString());
         }
         //heap占用很大,并且速度很慢
-        log.info("uuids cost:{}ms, memory size:{}MB,size:{}", stopwatch.elapsed(TimeUnit.MILLISECONDS), ObjectSizeCalculator.getObjectSize(uuids) / 1024 / 1024, uuids.size());
+//        log.info("uuids cost:{}ms, memory size:{}MB,size:{}", stopwatch.elapsed(TimeUnit.MILLISECONDS), ObjectSizeCalculator.getObjectSize(uuids) / 1024 / 1024, uuids.size());
 
 
         HyperLogLog hyperLogLoguuids = new HyperLogLog(0.003);
         for (int i = 0; i < count; i++) {
             hyperLogLoguuids.offer(UUID.randomUUID().toString());
         }
-        log.info("hyperLogLoguuids cost:{}ms, memory size:{}MB,size:{}", stopwatch.elapsed(TimeUnit.MILLISECONDS), ObjectSizeCalculator.getObjectSize(hyperLogLoguuids) / 1024 / 1024, hyperLogLoguuids.cardinality());
+//        log.info("hyperLogLoguuids cost:{}ms, memory size:{}MB,size:{}", stopwatch.elapsed(TimeUnit.MILLISECONDS), ObjectSizeCalculator.getObjectSize(hyperLogLoguuids) / 1024 / 1024, hyperLogLoguuids.cardinality());
         //Redis PFADD PFCOUNT
     }
 }

@@ -10,17 +10,32 @@ package org.lili.jdk;
  */
 public enum ClientSource {
 
-    PC("PC"),
+    PC("1","ddfff"),
 
-    APP("APP");
+    APP("2","dvve");
 
     private String label;
+    private String desc;
 
-    ClientSource(String label) {
+    ClientSource(String label,String desc) {
         this.label = label;
+        this.desc = desc;
+    }
+
+    public static  ClientSource valueOfType(String v) {
+        for (ClientSource value : values()) {
+            if (value.label.equals(v)) return value;
+        }
+        return null;
     }
 
     public String getLabel() {
         return label;
+    }
+
+
+    public static void main(String[] args) {
+        ClientSource pc = ClientSource.valueOfType("1");
+        System.out.println(pc);
     }
 }

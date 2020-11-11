@@ -4,7 +4,7 @@ import com.google.common.base.Stopwatch;
 import com.google.common.collect.Sets;
 import com.google.common.hash.BloomFilter;
 import com.google.common.hash.Funnels;
-import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
+//import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
 import lombok.extern.log4j.Log4j2;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.SetUtils;
@@ -59,7 +59,7 @@ public class HashSetTest {
             uuids.add(UUID.randomUUID().toString());
         }
         //heap占用很大,并且速度很慢
-        log.info("uuids cost:{}ms, memory size:{}MB", stopwatch.elapsed(TimeUnit.MILLISECONDS), ObjectSizeCalculator.getObjectSize(uuids) / 1024 / 1024);
+//        log.info("uuids cost:{}ms, memory size:{}MB", stopwatch.elapsed(TimeUnit.MILLISECONDS), ObjectSizeCalculator.getObjectSize(uuids) / 1024 / 1024);
 
         BloomFilter<String> bloomFilteruuids = BloomFilter.create(Funnels.stringFunnel(Charset.forName("UTF-8")), 100000000);
         Stopwatch stopwatch2 = Stopwatch.createStarted();
@@ -67,7 +67,7 @@ public class HashSetTest {
             bloomFilteruuids.put(UUID.randomUUID().toString());
         }
         //size越大，速度比set快,占用内存比set小
-        log.info("bloomFilteruuids cost:{}ms, memory size:{}MB", stopwatch2.elapsed(TimeUnit.MILLISECONDS), ObjectSizeCalculator.getObjectSize(bloomFilteruuids) / 1024 / 1024);
+//        log.info("bloomFilteruuids cost:{}ms, memory size:{}MB", stopwatch2.elapsed(TimeUnit.MILLISECONDS), ObjectSizeCalculator.getObjectSize(bloomFilteruuids) / 1024 / 1024);
 
     }
 }

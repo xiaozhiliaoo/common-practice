@@ -1,8 +1,8 @@
 package org.lili.jdk.jar;
 
 import com.google.common.collect.MapMaker;
-import com.sun.nio.zipfs.ZipInfo;
-import sun.net.spi.nameservice.dns.DNSNameService;
+//import com.sun.nio.zipfs.ZipInfo;
+//import sun.net.spi.nameservice.dns.DNSNameService;
 
 import javax.crypto.Cipher;
 import java.net.URL;
@@ -26,17 +26,17 @@ public class ClassLoaderTest {
         System.out.println("ClassLoaderTest Parent Parent:"+ClassLoaderTest.class.getClassLoader().getParent().getParent());
         System.out.println(ClassLoader.getSystemClassLoader());
         //C:\Program Files\Java\jdk1.8.0_181\jre\lib\ext
-        System.out.println(DNSNameService.class.getClassLoader());
-        System.out.println(ZipInfo.class.getClassLoader());
+//        System.out.println(DNSNameService.class.getClassLoader());
+//        System.out.println(ZipInfo.class.getClassLoader());
         String classPath = System.getProperty("java.class.path");
         for (String path : classPath.split(";")) {
             System.out.println(path);
         }
 
-        URL[] urLs = sun.misc.Launcher.getBootstrapClassPath().getURLs();
-        for (URL url : urLs) {
-            System.out.println(url.toExternalForm());
-        }
+//        URL[] urLs = sun.misc.Launcher.getBootstrapClassPath().getURLs();
+//        for (URL url : urLs) {
+//            System.out.println(url.toExternalForm());
+//        }
 
         System.out.println(Thread.currentThread().getContextClassLoader());
     }

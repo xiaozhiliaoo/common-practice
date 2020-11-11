@@ -1,6 +1,6 @@
 package org.lili.jdk;
 
-import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
+//import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -59,13 +59,13 @@ public class BitSetTest {
         BitSet bits3 = new BitSet(Integer.MAX_VALUE);
         bits3.set(Integer.MAX_VALUE);
         //没有被压缩，占用很大内存
-        System.out.println(ObjectSizeCalculator.getObjectSize(bits3));
+//        System.out.println(ObjectSizeCalculator.getObjectSize(bits3));
         System.out.println(bits3);
 
 
         BitSet bits4 = new BitSet(1);
         bits4.set(1);
-        System.out.println(ObjectSizeCalculator.getObjectSize(bits4));
+//        System.out.println(ObjectSizeCalculator.getObjectSize(bits4));
         System.out.println(bits4);
     }
 }

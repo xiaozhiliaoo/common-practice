@@ -5,12 +5,13 @@ import com.carrotsearch.sizeof.RamUsageEstimator;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.LoadingCache;
 import com.google.common.collect.ImmutableMap;
-import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
+//import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
+//import jdk.internal.vm.annotation.Contended;
 import org.junit.Test;
 import org.openjdk.jol.info.ClassLayout;
 import org.openjdk.jol.info.GraphLayout;
 import org.openjdk.jol.vm.VM;
-import sun.misc.Contended;
+//import sun.misc.Contended;
 
 import java.io.UnsupportedEncodingException;
 import java.util.*;
@@ -92,10 +93,8 @@ class FieldsArrangement {
 
 class Isolated {
 
-    @Contended
     private int v1;
 
-    @Contended
     private long v2;
 }
 
@@ -121,8 +120,8 @@ public class ObjectSizeTest {
         for (int i = 0; i < 5000000; i++) {
             integerList.add(i);
         }
-        System.out.println(ObjectSizeCalculator.getObjectSize(integerList) / 1024 / 1024 + "MB");
-        System.out.println(ObjectSizeCalculator.getObjectSize(1) + "B");
+//        System.out.println(ObjectSizeCalculator.getObjectSize(integerList) / 1024 / 1024 + "MB");
+//        System.out.println(ObjectSizeCalculator.getObjectSize(1) + "B");
         System.out.println(GraphLayout.parseInstance(integerList).toFootprint());
         System.out.println(GraphLayout.parseInstance(integerList).totalCount());
         System.out.println(GraphLayout.parseInstance(integerList).totalSize());
@@ -132,14 +131,14 @@ public class ObjectSizeTest {
     @Test
     public void testByte() {
         System.out.println(ClassLayout.parseInstance((byte) 1).toPrintable());
-        System.out.println(ObjectSizeCalculator.getObjectSize((byte) 1));
+//        System.out.println(ObjectSizeCalculator.getObjectSize((byte) 1));
     }
 
     @Test
     public void testShort() {
         Short s = (short) 4;
         System.out.println(ClassLayout.parseInstance(s).toPrintable());
-        System.out.println(ObjectSizeCalculator.getObjectSize(s));
+//        System.out.println(ObjectSizeCalculator.getObjectSize(s));
     }
 
     @Test
@@ -222,7 +221,7 @@ public class ObjectSizeTest {
         out.println("-------------------------------------");
 
         ImmutableMap<String, String> immutableMap = ImmutableMap.of("string", "string", "string2", "string2");
-        System.out.println(ObjectSizeCalculator.getObjectSize(immutableMap));
+//        System.out.println(ObjectSizeCalculator.getObjectSize(immutableMap));
         System.out.println(RamUsageEstimator.humanSizeOf(immutableMap));
         ClassLayout layout = ClassLayout.parseInstance(immutableMap);
         System.out.println(layout.toPrintable());
@@ -233,7 +232,7 @@ public class ObjectSizeTest {
         Map<String, String> hashMap = new HashMap<>(2);
         hashMap.put("string", "string");
         hashMap.put("string2", "string2");
-        System.out.println(ObjectSizeCalculator.getObjectSize(hashMap));
+//        System.out.println(ObjectSizeCalculator.getObjectSize(hashMap));
         System.out.println(RamUsageEstimator.humanSizeOf(hashMap));
 
         ClassLayout layout2 = ClassLayout.parseInstance(hashMap);
@@ -253,12 +252,12 @@ public class ObjectSizeTest {
     }
 
     public static void main(String[] args) {
-        System.out.println(ObjectSizeCalculator.getObjectSize(1));
+//        System.out.println(ObjectSizeCalculator.getObjectSize(1));
         char a = '1';
-        System.out.println(ObjectSizeCalculator.getObjectSize(a));
+//        System.out.println(ObjectSizeCalculator.getObjectSize(a));
         byte b = 1;
-        System.out.println(ObjectSizeCalculator.getObjectSize(b));
+//        System.out.println(ObjectSizeCalculator.getObjectSize(b));
         long l = 1;
-        System.out.println(ObjectSizeCalculator.getObjectSize(l));
+//        System.out.println(ObjectSizeCalculator.getObjectSize(l));
     }
 }

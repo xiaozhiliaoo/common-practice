@@ -1,6 +1,6 @@
 package org.lili.jdk;
 
-import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
+//import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
 import lombok.ToString;
 import org.junit.Test;
 
@@ -37,12 +37,12 @@ public class ByteTest {
         Byte a1 = new Byte("1");
         Byte a2 = new Byte("1");
         Byte a3 = new Byte("1");
-        System.out.println(ObjectSizeCalculator.getObjectSize(a1 + a2 + a3));
+//        System.out.println(ObjectSizeCalculator.getObjectSize(a1 + a2 + a3));
 
         Byte b1 = Byte.valueOf("1");
         Byte b2 = Byte.valueOf("1");
         Byte b3 = Byte.valueOf("1");
-        System.out.println(ObjectSizeCalculator.getObjectSize(b1 + b2 + b3));
+//        System.out.println(ObjectSizeCalculator.getObjectSize(b1 + b2 + b3));
 
     }
 }
