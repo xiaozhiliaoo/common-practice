@@ -40,12 +40,64 @@ public class FutureTaskTest {
     @Test
     public void getLimitTime() throws ExecutionException, InterruptedException, TimeoutException {
         Callable<String> callable = () -> {
-            Thread.sleep(10000);
+            Thread.sleep(1000000);
             return "alibaba";
         };
         ExecutorService es = Executors.newCachedThreadPool();
         Future<String> submit = es.submit(callable);
         Thread.sleep(3000);
-        System.out.println(submit.get(3, TimeUnit.SECONDS));
+
+        Thread thread1 = new Thread(() -> {
+            try {
+                System.out.println(submit.get());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        thread1.setName("first");
+        thread1.start();
+
+        Thread.sleep(1000);
+
+        Thread thread2 = new Thread(() -> {
+            try {
+                System.out.println(submit.get());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        thread2.setName("second");
+        thread2.start();
+
+        Thread.sleep(1000);
+
+
+
+        Thread thread3 = new Thread(() -> {
+            try {
+                System.out.println(submit.get());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        thread3.setName("third");
+        thread3.start();
+
+        Thread.sleep(1000);
+
+
+        Thread thread4 = new Thread(() -> {
+            try {
+                System.out.println(submit.get());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        thread4.setName("fourth");
+        thread4.start();
+
+        Thread.sleep(50000000);
+
+        //System.out.println(submit.get(3000000, TimeUnit.SECONDS));
     }
 }
