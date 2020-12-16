@@ -7,6 +7,7 @@ import com.google.common.cache.LoadingCache;
 import com.google.common.collect.ImmutableMap;
 //import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
 //import jdk.internal.vm.annotation.Contended;
+import com.google.common.collect.Maps;
 import org.junit.Test;
 import org.openjdk.jol.info.ClassLayout;
 import org.openjdk.jol.info.GraphLayout;
@@ -110,8 +111,15 @@ public class ObjectSizeTest {
 
     @Test
     public void testCache() {
-        out.println(ClassLayout.parseInstance(new HashMap<>()).instanceSize());
-        out.println(VM.current().sizeOf(new HashMap<>()));
+        Map<Object, Object> obj = Maps.newHashMap();
+        obj.put("11","11");
+        obj.put("22","22");
+        out.println("Map:"+ClassLayout.parseInstance(obj).instanceSize());
+        out.println("Map:"+VM.current().sizeOf(obj));
+
+        ImmutableMap<String, String> of = ImmutableMap.of("11", "11","22","22");
+        out.println("ImmutableMap:"+ClassLayout.parseInstance(of).instanceSize());
+        out.println("ImmutableMap:"+VM.current().sizeOf(of));
     }
 
     @Test

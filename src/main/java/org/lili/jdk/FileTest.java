@@ -2,8 +2,10 @@ package org.lili.jdk;
 
 import com.google.common.io.Files;
 import org.apache.commons.io.FileUtils;
+import org.junit.Test;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -16,6 +18,26 @@ import java.nio.file.Paths;
  */
 
 public class FileTest {
+
+    @Test
+    public void testCreateFile() throws Exception {
+
+        File file = new File("maven打包命名.txt");
+        FileUtils.copyInputStreamToFile(new FileInputStream("C:\\Users\\chao\\Desktop\\maven打包命名.txt"), file);
+        System.out.println(file.getName());
+        System.out.println(file.getAbsolutePath());
+
+        file.delete();
+
+    }
+
+
+
+
+
+
+
+
     public static void main(String[] args) throws IOException {
         String pathSeparator = File.separator;
         File file = new File(".");

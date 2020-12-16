@@ -4,10 +4,7 @@ import com.alibaba.fastjson.JSON;
 import org.checkerframework.checker.units.qual.C;
 import org.junit.Test;
 
-import java.util.Collection;
-import java.util.Enumeration;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -42,5 +39,15 @@ public class ConcurrentHashMapTest {
         ConcurrentHashMap<String,String> map = new ConcurrentHashMap<>(15,0.75f,8);
         String alibaba = map.get("alibaba");
         String put = map.put("alibaba", "idst");
+    }
+
+    @Test
+    public void test2() {
+        Map<String,String> map = new HashMap<>();
+        map.put("11","22");
+        map.put("112","223");
+        map.put("113","2245");
+        ConcurrentHashMap<String,String> m = new ConcurrentHashMap<>(map);
+        System.out.println(m);
     }
 }

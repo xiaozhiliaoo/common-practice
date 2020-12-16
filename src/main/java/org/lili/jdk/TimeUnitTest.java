@@ -15,6 +15,11 @@ import java.util.concurrent.TimeUnit;
 public class TimeUnitTest {
 
     @Test
+    public void test3() {
+        System.out.println(TimeUnit.MINUTES.toMillis(1));
+    }
+
+    @Test
     public void test() {
         System.out.println(System.currentTimeMillis());
         Assert.assertEquals(24 * 60 * 60 * 1000, TimeUnit.DAYS.toMillis(1));
@@ -23,13 +28,35 @@ public class TimeUnitTest {
         Assert.assertEquals(24 * 60 * 60 * 1000 * 30L, TimeUnit.DAYS.toMillis(30));
     }
 
+
     @Test
     public void test2() {
-
+        System.out.println(TimeUnit.MILLISECONDS.toDays((24 * 60 * 60 * 1000) * 3 / 2));
+        System.out.println(TimeUnit.MILLISECONDS.toMinutes((24 * 60 * 60 * 1000) * 3 / 2));
     }
 
     public static void main(String[] args) {
         System.out.println(TimeUnit.DAYS.toMillis(1));
 
+    }
+
+    @Test
+    public void test333() {
+        mmm();
+    }
+
+    public void mmm() {
+        m1();
+        System.out.println(m2());
+    }
+
+    public void m1() {
+        System.out.println("11111111");
+        return;
+    }
+
+    public int m2() {
+        System.out.println("2222222");
+        return 100;
     }
 }
