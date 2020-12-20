@@ -2,7 +2,7 @@ package org.lili.pds;
 
 import com.clearspring.analytics.stream.Counter;
 import com.clearspring.analytics.stream.StreamSummary;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 

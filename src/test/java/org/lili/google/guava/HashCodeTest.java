@@ -4,7 +4,7 @@ import com.google.common.base.CharMatcher;
 import com.google.common.hash.HashCode;
 import com.google.common.hash.Hashing;
 import lombok.Data;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;

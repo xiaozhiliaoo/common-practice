@@ -2,7 +2,7 @@ package org.lili.okhttp;
 
 import okhttp3.*;
 import org.apache.commons.io.FilenameUtils;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.File;
 

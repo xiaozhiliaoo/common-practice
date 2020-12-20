@@ -8,8 +8,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import lombok.Data;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.io.StringReader;
 import java.util.ArrayList;
@@ -36,7 +36,7 @@ public class SerializationTest {
 
     private String userListJSON;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         for (int i = 0; i < 1000000; i++) {
             User user = new User();

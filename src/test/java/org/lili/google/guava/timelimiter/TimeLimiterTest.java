@@ -3,7 +3,7 @@ package org.lili.google.guava.timelimiter;
 import com.google.common.util.concurrent.SimpleTimeLimiter;
 import com.google.common.util.concurrent.TimeLimiter;
 import com.google.common.util.concurrent.UncheckedTimeoutException;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.*;
 

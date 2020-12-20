@@ -8,7 +8,7 @@ import com.google.common.collect.ImmutableMap;
 //import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
 //import jdk.internal.vm.annotation.Contended;
 import com.google.common.collect.Maps;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.openjdk.jol.info.ClassLayout;
 import org.openjdk.jol.info.GraphLayout;
 import org.openjdk.jol.vm.VM;

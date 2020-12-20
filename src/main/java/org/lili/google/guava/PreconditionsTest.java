@@ -1,7 +1,7 @@
 package org.lili.google.guava;
 
 import com.google.common.base.Preconditions;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author lili

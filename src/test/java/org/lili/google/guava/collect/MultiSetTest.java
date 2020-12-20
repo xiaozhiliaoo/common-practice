@@ -3,10 +3,11 @@ package org.lili.google.guava.collect;
 import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
 import com.google.common.collect.Multisets;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 /**
  * @author lili
@@ -32,7 +33,6 @@ public class MultiSetTest {
 
     }
 
-    @Test(expected = IllegalArgumentException.class)
     public void test() {
         Multiset<Object> multiset = HashMultiset.create();
         multiset.setCount("Potter", -1);

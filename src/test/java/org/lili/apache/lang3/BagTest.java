@@ -3,7 +3,7 @@ package org.lili.apache.lang3;
 import com.alibaba.fastjson.JSON;
 import org.apache.commons.collections4.Bag;
 import org.apache.commons.collections4.bag.HashBag;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.FutureTask;

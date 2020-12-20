@@ -1,6 +1,6 @@
 package org.lili.jdk.juc;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.TimeUnit;

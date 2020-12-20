@@ -2,7 +2,7 @@ package org.lili.jdk;
 
 //import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
 import lombok.ToString;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author lili

@@ -1,7 +1,7 @@
 package org.lili.google.guava;
 
 import com.google.common.util.concurrent.ExecutionList;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

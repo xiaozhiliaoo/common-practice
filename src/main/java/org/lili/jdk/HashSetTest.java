@@ -1,22 +1,20 @@
 package org.lili.jdk;
 
 import com.google.common.base.Stopwatch;
-import com.google.common.collect.Sets;
 import com.google.common.hash.BloomFilter;
 import com.google.common.hash.Funnels;
-//import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
 import lombok.extern.log4j.Log4j2;
-import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.collections4.SetUtils;
-import org.junit.Test;
-
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
 
 import java.nio.charset.Charset;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
-import java.util.concurrent.TimeUnit;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+//import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
 
 /**
  * @author lili

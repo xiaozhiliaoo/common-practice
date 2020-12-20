@@ -2,7 +2,7 @@ package org.lili.google.guava;
 
 import com.alibaba.fastjson.JSON;
 import com.google.common.collect.TreeMultimap;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author lili

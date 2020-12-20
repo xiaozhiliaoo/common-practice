@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.google.common.collect.ImmutableBiMap;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.LinkedHashMultimap;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author lili

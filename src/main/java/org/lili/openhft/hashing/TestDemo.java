@@ -3,7 +3,7 @@ package org.lili.openhft.hashing;
 import com.google.common.hash.HashFunction;
 import com.google.common.hash.Hashing;
 import net.openhft.hashing.LongHashFunction;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.nio.charset.StandardCharsets;
 

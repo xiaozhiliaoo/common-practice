@@ -1,6 +1,6 @@
 package org.lili.jdk;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.lang.annotation.Target;
 import java.math.BigDecimal;

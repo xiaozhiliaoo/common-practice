@@ -1,7 +1,7 @@
 package org.lili.google.guava;
 
 import com.google.common.base.Stopwatch;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.TimeUnit;
 

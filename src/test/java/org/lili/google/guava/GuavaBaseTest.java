@@ -7,14 +7,16 @@ import com.google.common.collect.Lists;
 import com.google.common.net.MediaType;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.checkerframework.checker.units.qual.A;
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 /**
@@ -67,8 +69,8 @@ public class GuavaBaseTest {
         SPLITTER.split(confuse);
 
         //List<String> strings = Splitter.on("L").splitToList("ETC3LUSDT");
-        Assert.assertEquals(Lists.newArrayList("ETC3L","USDT"),spliter("ETC3LUSDT"));
-        Assert.assertEquals(Lists.newArrayList("ETC3S","USDT"),spliter("ETC3SUSDT"));
+        assertEquals(Lists.newArrayList("ETC3L","USDT"),spliter("ETC3LUSDT"));
+        assertEquals(Lists.newArrayList("ETC3S","USDT"),spliter("ETC3SUSDT"));
 
     }
 
@@ -91,9 +93,9 @@ public class GuavaBaseTest {
     public void testJoiner() {
         //without NPE
         String join = Joiner.on(",").skipNulls().join("Kurt", "Kevin", null, "Chris");
-        Assert.assertEquals("Kurt,Kevin,Chris", join);
+        assertEquals("Kurt,Kevin,Chris", join);
         String joinWithNull = Joiner.on(",").useForNull("null").join("Kurt", "Kevin", null, "Chris");
-        Assert.assertEquals("Kurt,Kevin,null,Chris", joinWithNull);
+        assertEquals("Kurt,Kevin,null,Chris", joinWithNull);
     }
 
     @Test

@@ -1,10 +1,14 @@
 package org.lili.jdk;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.text.SimpleDateFormat;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 import java.util.TimeZone;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author lili
@@ -14,6 +18,14 @@ import java.util.TimeZone;
  */
 
 public class DateTest {
+
+    @Test
+    public void testForEach() {
+        List<Object> objects = null;
+        for (Object object : objects) {
+            System.out.println(object);
+        }
+    }
 
     @Test
     public void test2() {
@@ -26,6 +38,35 @@ public class DateTest {
         Date date = new Date();
         System.out.println(date);
     }
+
+    @Test
+    public void dateTo() {
+        Date date = new Date();
+        SimpleDateFormat bjSdf = new SimpleDateFormat("HH:mm:ss");
+//        String format = bjSdf.(date);
+//        System.out.println(format.toString());
+
+    }
+
+    @Test
+    public void aa() {
+        assertEquals(get(0),get2(0));
+        assertEquals(get(1),get2(1));
+        assertEquals(get(2),get2(2));
+    }
+
+    private boolean get(int number) {
+        if (number == 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+    private boolean get2(int number) {
+        return ! (number == 0);
+    }
+
+
 
     @Test
     public void test3() {

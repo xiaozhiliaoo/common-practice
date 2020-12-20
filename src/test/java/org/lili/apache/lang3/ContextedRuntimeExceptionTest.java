@@ -2,7 +2,7 @@ package org.lili.apache.lang3;
 
 import org.apache.commons.lang3.exception.ContextedException;
 import org.apache.commons.lang3.exception.ContextedRuntimeException;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author lili

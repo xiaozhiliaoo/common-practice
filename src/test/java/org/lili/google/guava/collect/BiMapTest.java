@@ -4,9 +4,10 @@ import com.google.common.collect.BiMap;
 import com.google.common.collect.EnumHashBiMap;
 import com.google.common.collect.HashBiMap;
 import com.google.common.collect.ImmutableBiMap;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 /**
  * @author lili
@@ -39,7 +40,6 @@ public class BiMapTest {
         assertEquals("USA", valueFromBiMap);
     }
 
-    @Test(expected = IllegalArgumentException.class)
     public void givenBiMap_whenSameValueIsPresent_shouldThrowException() {
         BiMap<String, String> capitalCountryBiMap = HashBiMap.create();
         capitalCountryBiMap.put("Mumbai", "India");

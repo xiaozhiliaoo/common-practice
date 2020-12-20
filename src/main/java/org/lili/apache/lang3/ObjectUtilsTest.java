@@ -2,7 +2,7 @@ package org.lili.apache.lang3;
 
 import com.google.common.collect.HashBiMap;
 import org.apache.commons.lang3.ObjectUtils;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;

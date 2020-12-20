@@ -1,12 +1,13 @@
 package org.lili.jdk;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author lili
@@ -78,17 +79,17 @@ public class HashMapTest {
 
     @Test
     public void tableSizeFor() {
-        Assert.assertEquals(1, tableSizeFor(-4));
-        Assert.assertEquals(1, tableSizeFor(0));
-        Assert.assertEquals(1, tableSizeFor(1));
-        Assert.assertEquals(2, tableSizeFor(2));
-        Assert.assertEquals(4, tableSizeFor(3));
-        Assert.assertEquals(8, tableSizeFor(7));
-        Assert.assertEquals(16, tableSizeFor(11));
-        Assert.assertEquals(16, tableSizeFor(12));
-        Assert.assertEquals(16, tableSizeFor(13));
-        Assert.assertEquals(16, tableSizeFor(15));
-        Assert.assertEquals(32, tableSizeFor(17));
+        assertEquals(1, tableSizeFor(-4));
+        assertEquals(1, tableSizeFor(0));
+        assertEquals(1, tableSizeFor(1));
+        assertEquals(2, tableSizeFor(2));
+        assertEquals(4, tableSizeFor(3));
+        assertEquals(8, tableSizeFor(7));
+        assertEquals(16, tableSizeFor(11));
+        assertEquals(16, tableSizeFor(12));
+        assertEquals(16, tableSizeFor(13));
+        assertEquals(16, tableSizeFor(15));
+        assertEquals(32, tableSizeFor(17));
     }
 
     @Test

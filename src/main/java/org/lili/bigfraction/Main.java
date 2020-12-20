@@ -1,7 +1,7 @@
 package org.lili.bigfraction;
 
 import com.github.kiprobinson.bigfraction.BigFraction;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.math.BigInteger;
 

@@ -1,11 +1,11 @@
 package org.lili.apache.lang3;
 
 import org.apache.commons.collections4.map.LRUMap;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Map;
 
-import static org.junit.Assert.*;
+
 
 /**
  * @author lili

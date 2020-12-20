@@ -5,7 +5,7 @@ import com.google.common.collect.ComparisonChain;
 import com.google.common.collect.Ordering;
 import org.apache.commons.collections4.comparators.ComparatorChain;
 import org.checkerframework.checker.nullness.qual.Nullable;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Comparator;
 

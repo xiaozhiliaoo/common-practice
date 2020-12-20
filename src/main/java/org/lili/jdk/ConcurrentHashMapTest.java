@@ -2,7 +2,7 @@ package org.lili.jdk;
 
 import com.alibaba.fastjson.JSON;
 import org.checkerframework.checker.units.qual.C;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;

@@ -2,7 +2,7 @@ package org.lili.pds;
 
 import com.clearspring.analytics.stream.cardinality.HyperLogLogPlus;
 import com.clearspring.analytics.util.TopK;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  *

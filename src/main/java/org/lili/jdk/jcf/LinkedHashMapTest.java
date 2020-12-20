@@ -1,6 +1,6 @@
 package org.lili.jdk.jcf;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;

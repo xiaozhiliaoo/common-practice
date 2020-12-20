@@ -3,13 +3,11 @@ package org.lili.google.guava;
 import com.google.common.base.Splitter;
 import com.google.common.collect.Maps;
 import org.checkerframework.checker.units.qual.A;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
 
 /**
  * @author lili

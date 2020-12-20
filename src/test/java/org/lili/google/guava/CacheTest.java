@@ -1,6 +1,6 @@
 package org.lili.google.guava;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author lili

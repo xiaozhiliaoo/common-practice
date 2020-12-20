@@ -1,7 +1,7 @@
 package org.lili.pds;
 
 import com.clearspring.analytics.stream.frequency.CountMinSketch;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * 频率统计，不能删除，不能遍历，不能

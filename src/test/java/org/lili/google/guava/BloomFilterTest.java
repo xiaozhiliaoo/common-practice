@@ -2,13 +2,12 @@ package org.lili.google.guava;
 
 import com.google.common.hash.BloomFilter;
 import com.google.common.hash.Funnels;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.stream.IntStream;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * @author lili
@@ -32,7 +31,7 @@ public class BloomFilterTest {
     @Test
     public void testInsert() {
         BloomFilter<Integer> filter = BloomFilter.create(Funnels.integerFunnel(), 5, 0.01);
-        IntStream.range(0,100_000).forEach(filter::put);
+        IntStream.range(0, 100_000).forEach(filter::put);
         filter.put(1_000_000);
         assertTrue(filter.mightContain(1));
         assertTrue(filter.mightContain(2));

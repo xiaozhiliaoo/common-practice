@@ -2,7 +2,7 @@ package org.lili.jdk;
 
 import com.alibaba.fastjson.JSON;
 import lombok.Data;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;

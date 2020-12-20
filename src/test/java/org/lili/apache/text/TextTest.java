@@ -2,7 +2,7 @@ package org.lili.apache.text;
 
 import org.apache.commons.lang3.text.StrSubstitutor;
 import org.apache.commons.text.StringSubstitutor;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;

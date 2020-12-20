@@ -2,16 +2,16 @@ package org.lili.jdk;
 
 import com.clearspring.analytics.stream.cardinality.HyperLogLog;
 import com.google.common.base.Stopwatch;
-//import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
 import lombok.extern.log4j.Log4j2;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
-import java.util.concurrent.TimeUnit;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+//import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
 
 /**
  * @author lili

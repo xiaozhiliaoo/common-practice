@@ -8,6 +8,15 @@
     <artifactId>common-practice</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+
+    <properties>
+        <junit.jupiter.version>5.7.0</junit.jupiter.version>
+        <assertj-core.version>3.18.1</assertj-core.version>
+        <assertj-guava.version>3.4.0</assertj-guava.version>
+        <mockito-core.version>3.6.28</mockito-core.version>
+    </properties>
+
+
     <dependencies>
 
 
@@ -148,15 +157,31 @@
         </dependency>
 
 
-        <!-- https://mvnrepository.com/artifact/junit/junit -->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13.1</version>
-            <!--
-                        <scope>test</scope>
-            -->
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj-core.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-guava</artifactId>
+            <version>3.4.0</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito-core.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit.jupiter.version}</version>
+        </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/org.ehcache/ehcache -->
         <dependency>
@@ -297,7 +322,7 @@
         </dependency>
 
 
-              <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+        <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
@@ -412,10 +437,8 @@
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
             <version>3.18.1</version>
-<!--            <scope>test</scope>-->
+            <!--            <scope>test</scope>-->
         </dependency>
-
-
 
 
     </dependencies>

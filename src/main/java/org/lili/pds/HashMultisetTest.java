@@ -2,7 +2,7 @@ package org.lili.pds;
 
 import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author lili
