@@ -36,8 +36,11 @@ public class StopWatchTest {
     }
 
     @Test
-    public void getStart() {
+    public void getStart() throws InterruptedException {
         Stopwatch started = Stopwatch.createStarted();
-        System.out.println(started.elapsed());
+        //System.out.println(started.elapsed());
+        Thread.sleep(135);
+        started.elapsed(TimeUnit.MILLISECONDS);
+        System.out.println(started);
     }
 }
