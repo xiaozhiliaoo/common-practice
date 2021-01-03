@@ -49,4 +49,18 @@ public class TableTest {
     }
 
 
+    @Test
+    public void test() {
+        Table<String,String,Integer> w = HashBasedTable.create();
+        w.put("1","1",4);
+        w.put("1","3",20);
+        w.put("2","3",5);
+        System.out.println(w.row("1"));
+        System.out.println(w.column("3"));
+        System.out.println(w);
+        System.out.println("----------------------");
+        System.out.println(JSON.toJSONString(w));
+    }
+
+
 }

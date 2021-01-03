@@ -34,6 +34,23 @@ public class CollectionsTest {
         a.put("12","2");
         a.put("13","2");
         Map<String, String> stringStringMap = Collections.unmodifiableMap(a);
+        stringStringMap.entrySet().add(new Map.Entry<String, String>() {
+            @Override
+            public String getKey() {
+                return "null1";
+            }
+
+            @Override
+            public String getValue() {
+                return "values-1";
+            }
+
+            @Override
+            public String setValue(String value) {
+                return "2222";
+            }
+        });
         stringStringMap.put("22","22");
+        System.out.println(stringStringMap);
     }
 }
