@@ -462,6 +462,34 @@
         </dependency>
 
 
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>3.4.1</version>
+            <type>jar</type>
+            <scope>compile</scope>
+        </dependency>
+
+
+
+        <!-- https://mvnrepository.com/artifact/io.github.resilience4j/resilience4j-all -->
+        <dependency>
+            <groupId>io.github.resilience4j</groupId>
+            <artifactId>resilience4j-all</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/io.github.resilience4j/resilience4j-spring-boot2 -->
+        <dependency>
+            <groupId>io.github.resilience4j</groupId>
+            <artifactId>resilience4j-spring-boot2</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+
+
+
+
 
 
 
