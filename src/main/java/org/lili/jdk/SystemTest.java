@@ -1,5 +1,7 @@
 package org.lili.jdk;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -14,5 +16,14 @@ public class SystemTest {
         for (int i = 0; i < 1000000; i++) {
             TimeUnit.MINUTES.sleep(1);
         }
+    }
+
+    @Test
+    public void line() {
+        System.out.println("start");
+        System.out.println(System.lineSeparator());
+        System.out.println(System.lineSeparator());
+        System.out.println(System.lineSeparator());
+        System.out.println("end");
     }
 }

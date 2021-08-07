@@ -1,8 +1,10 @@
 package org.lili.jdk;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import lombok.Data;
+import org.junit.jupiter.api.Test;
+
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @author lili
@@ -49,4 +51,33 @@ public class ListTest {
         list.removeAll(Collections.singleton(null));
         return list;
     }
+
+    @Data
+    class User {
+        private String name;
+        private int age;
+        private boolean is;
+
+        public User(String name, int age, boolean is) {
+            this.name = name;
+            this.age = age;
+            this.is = is;
+        }
+    }
+
+    @Test
+    public void removeDup() {
+        User user1 = new User("zhangsan1", 20, true);
+        User user2 = new User("zhangsan2", 20, true);
+        User user3 = new User("zhangsan1", 30, true);
+        List<User> list = new ArrayList<>();
+        list.add(user1);
+        list.add(user2);
+        list.add(user3);
+
+        list = list.stream().collect(Collectors.collectingAndThen(Collectors.toCollection(() -> new TreeSet<>(Comparator.comparing(User::getName))), ArrayList::new));
+        System.out.println(list);
+
+    }
+
 }

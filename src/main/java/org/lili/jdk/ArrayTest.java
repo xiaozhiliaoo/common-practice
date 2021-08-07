@@ -81,22 +81,17 @@ public class ArrayTest {
     @Test
     public void test2() {
 
-        List<String> objects = new ArrayList<>(5);
+        List<Long> objects = new ArrayList<>(5);
         System.out.println(CollectionUtils.isEmpty(objects));
-        objects.add("3333");
-        objects.add("4444");
-        objects.add("14444");
-        objects.add("44344");
-        List<String> collect = objects.stream().
-                sorted(Comparator.comparingInt(String::length).reversed()).limit(20).collect(Collectors.toList());
-        objects.sort(Comparator.comparingInt(String::length));
+        objects.add(333L);
+        objects.add(4444L);
+        objects.add(14444L);
+        objects.add(344L);
+        objects.sort(Comparator.comparingLong(x -> (long) x).reversed());
 
-        System.out.println(objects.subList(0, Math.min(objects.size(), 20)));
-
-        System.out.println(collect);
+        System.out.println(objects);
 
 
-        System.out.println(CollectionUtils.isEmpty(objects));
 
     }
 }

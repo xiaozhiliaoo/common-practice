@@ -11,16 +11,8 @@ import java.util.stream.Collectors;
  */
 public class Main {
     public static void main(String[] args) {
-        String suffix =  System.currentTimeMillis() + "alibaba.pdf".substring("alibaba.pdf".lastIndexOf("."));
-        System.out.println(suffix);
-
-        List<String> a = new ArrayList<>();
-        a.add("ddd1");
-        a.add("ddd2");
-        a.add("ddd3");
-        a.add("ddd4");
-        List<String> collect = a.stream().filter(x -> x.equals("ddd1")).collect(Collectors.toList());
-        System.out.println(collect);
+        int i = 5 / 2 + 1;
+        System.out.println(i);
 
     }
 }

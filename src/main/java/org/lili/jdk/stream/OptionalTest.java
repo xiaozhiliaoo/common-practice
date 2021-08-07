@@ -1,7 +1,6 @@
 package org.lili.jdk.stream;
 
 import lombok.Data;
-import org.apache.commons.math3.analysis.function.Add;
 import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
@@ -32,13 +31,20 @@ public class OptionalTest {
 
 
     public static Optional<Address> getAddress() {
-        return Optional.empty();
+        //return Optional.empty();
+        Address other = new Address();
+        other.setId(111);
+        other.setWhere("alibaba");
+        return Optional.of(other);
     }
 
     @Test
     public void orElse() {
         Optional<Address> address = getAddress();
-        Address x = address.orElse(new Address());
+        Address other = new Address();
+        other.setId(222);
+        other.setWhere("alibaba");
+        Address x = address.orElse(other);
         System.out.println(x);
     }
 

@@ -1,5 +1,7 @@
 package org.lili.jdk;
 
+import org.apache.commons.lang3.time.DateFormatUtils;
+import org.apache.commons.lang3.time.DateUtils;
 import org.junit.jupiter.api.Test;
 
 import java.text.SimpleDateFormat;
@@ -50,9 +52,9 @@ public class DateTest {
 
     @Test
     public void aa() {
-        assertEquals(get(0),get2(0));
-        assertEquals(get(1),get2(1));
-        assertEquals(get(2),get2(2));
+        assertEquals(get(0), get2(0));
+        assertEquals(get(1), get2(1));
+        assertEquals(get(2), get2(2));
     }
 
     private boolean get(int number) {
@@ -62,10 +64,10 @@ public class DateTest {
             return true;
         }
     }
-    private boolean get2(int number) {
-        return ! (number == 0);
-    }
 
+    private boolean get2(int number) {
+        return !(number == 0);
+    }
 
 
     @Test
@@ -84,5 +86,15 @@ public class DateTest {
         System.out.println("毫秒数:" + date.getTime() + ", 北京时间:" + bjSdf.format(date));
         System.out.println("毫秒数:" + date.getTime() + ", 东京时间:" + tokyoSdf.format(date));
         System.out.println("毫秒数:" + date.getTime() + ", 伦敦时间:" + londonSdf.format(date));
+    }
+
+    @Test
+    public void test4() {
+        Date date = new Date();
+        Date x = DateUtils.addMonths(date, -1);
+        System.out.println(DateFormatUtils.format(x, "YYYYMM"));
+        System.out.println(DateFormatUtils.format(date, "YYYYMM"));
+        System.out.println(x);
+
     }
 }

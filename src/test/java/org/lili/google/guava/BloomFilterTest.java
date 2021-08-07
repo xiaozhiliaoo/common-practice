@@ -1,9 +1,13 @@
 package org.lili.google.guava;
 
+import com.google.common.collect.Lists;
 import com.google.common.hash.BloomFilter;
 import com.google.common.hash.Funnels;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -25,6 +29,10 @@ public class BloomFilterTest {
         assertTrue(filter.mightContain(2));
         assertTrue(filter.mightContain(3));
         assertFalse(filter.mightContain(100));
+        System.out.println(new BigDecimal("1.00").compareTo(BigDecimal.ONE) <= 1);
+        List<Integer> s = Lists.newArrayList(1,2,3,4,5);
+        List<Integer> collect = s.stream().filter(x -> x == 1).collect(Collectors.toList());
+        System.out.println(collect);
     }
 
 

@@ -17,16 +17,22 @@ public class TimeUnitTest {
 
     @Test
     public void test3() {
-        System.out.println(TimeUnit.MINUTES.toMillis(1));
+        System.out.println();
     }
 
     @Test
     public void test() {
-        System.out.println(System.currentTimeMillis());
         assertEquals(24 * 60 * 60 * 1000, TimeUnit.DAYS.toMillis(1));
+        assertEquals(24 * 60 * 60 * 1000, TimeUnit.HOURS.toMillis(24));
         assertEquals(24 * 60 * 60 * 1000 * 7, TimeUnit.DAYS.toMillis(7));
         assertEquals(24 * 60 * 60 * 1000 * 14, TimeUnit.DAYS.toMillis(14));
         assertEquals(24 * 60 * 60 * 1000 * 30L, TimeUnit.DAYS.toMillis(30));
+    }
+
+    @Test
+    public void test4() {
+        assertEquals(10 * 60 * 1000, TimeUnit.MINUTES.toMillis(10));
+
     }
 
 

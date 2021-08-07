@@ -4,6 +4,7 @@ import org.apache.commons.lang3.math.NumberUtils;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 
 /**
  * @author lili
@@ -20,5 +21,20 @@ public class BigDecimalTest {
 
 
         System.out.println(new BigDecimal("1.4890").multiply(new BigDecimal(100)).stripTrailingZeros().toPlainString());
+    }
+
+    private static final DecimalFormat decimalFormat = new DecimalFormat("#,##0.00");
+
+
+    @Test
+    public void test2() {
+        System.out.println(decimalFormat.format(22345223.021));
+        String obj = new BigDecimal("11134697654.23").toPlainString();
+        System.out.println(obj);
+        System.out.println(decimalFormat.format(new BigDecimal("11134697654.23")));
+        System.out.println(decimalFormat.format(new BigDecimal("0.23")));
+        System.out.println(decimalFormat.format(new BigDecimal("113.53")));
+
+
     }
 }

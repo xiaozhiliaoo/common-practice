@@ -39,4 +39,6 @@ public class StringUtilsTest {
         System.out.println(StringUtils.isNoneBlank("111", "222"));
         System.out.println(StringUtils.isNoneBlank("ddd", "222"));
     }
+
+
 }

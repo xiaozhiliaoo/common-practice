@@ -135,4 +135,23 @@ public class HashMapTest {
         System.out.println(hash.put("111", "23"));
         System.out.println(hash.put("1111", "234"));
     }
+
+    @Test
+    public void test22() {
+        HashMap<String, String> hash = new HashMap<>();
+        System.out.println(hash.computeIfAbsent("1", x -> {
+            System.out.println("进入计算1");
+            return "111";
+        }));
+        hash.computeIfAbsent("1", x-> {
+            System.out.println("进入计算2");
+            return "111";
+        });
+        hash.computeIfAbsent("1", x-> {
+            System.out.println("进入计算3");
+            return "111";
+        });
+    }
+
+
 }

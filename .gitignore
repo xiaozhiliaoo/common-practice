@@ -159,3 +159,4 @@ release.properties
 **/.DS_Store
 **/.springBeans
 
+src/main/java/org/lili/pay/wx2/WxConfig.java
