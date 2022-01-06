@@ -37,4 +37,13 @@ public class BigDecimalTest {
 
 
     }
+
+
+
+    @Test
+    public void divide() {
+        if (new BigDecimal("-5.6").compareTo(BigDecimal.ZERO) < 0) {
+            throw new RuntimeException("");
+        }
+    }
 }

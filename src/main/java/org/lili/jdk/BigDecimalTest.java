@@ -13,7 +13,14 @@ import org.junit.jupiter.api.Test;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+import static java.math.RoundingMode.HALF_UP;
+
 public class BigDecimalTest {
+
+    @Test
+    public void test() {
+        System.out.println(new BigDecimal("2.236").setScale(2, HALF_UP).stripTrailingZeros());
+    }
 
     @Test
     public void testCompare() {

@@ -1,8 +1,12 @@
 package org.lili.jdk;
 
+import com.google.common.collect.Lists;
+import lombok.SneakyThrows;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -48,22 +52,17 @@ public class TimeUnitTest {
     }
 
     @Test
-    public void test333() {
-        mmm();
+    public void m2() {
+        List<String> result = Lists.newArrayList();
+        List<String> a = Lists.newArrayList("2","3","4","5");
+        List<String> b = Lists.newArrayList("1","2","3");
+        System.out.println(a.stream().filter(x -> x.equalsIgnoreCase("2")).collect(Collectors.toList()));
     }
 
-    public void mmm() {
-        m1();
-        System.out.println(m2());
-    }
 
-    public void m1() {
-        System.out.println("11111111");
-        return;
-    }
-
-    public int m2() {
-        System.out.println("2222222");
-        return 100;
+    @Test
+    @SneakyThrows
+    public void tt() {
+        throw  new Exception();
     }
 }
