@@ -1,17 +1,14 @@
 package org;
 
-import com.google.common.base.Splitter;
-import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
-import org.apache.commons.lang3.time.DateFormatUtils;
-import org.joda.time.DateTimeUtils;
-import org.lili.jdk.DateUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.junit.jupiter.api.Test;
 
-import java.math.BigDecimal;
-import java.util.*;
-import java.util.concurrent.TimeUnit;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
 
-import static java.math.RoundingMode.HALF_UP;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * @author lili
@@ -20,39 +17,26 @@ import static java.math.RoundingMode.HALF_UP;
  */
 public class Main {
 
-
-    public static void main(String[] args) {
-
-        System.out.println(new Date());
-        System.out.println(DateFormatUtils.format(new Date(), "yyyy-MM-dd"));
+    public static final Long ORDER_ID = 987654321L;
+    public static final String CONTENT = "订单[987654321]的课程[123456]拆分后的结算金额为负:课程金额:56.77,物料金额:45.66";
 
 
+    @Test
+    void testParse2() {
+        List<Integer> integers = Arrays.asList(210250779, 210065262, 209936193, 209683941, 210356242, 210247386, 210193071, 210165856, 210089186, 210006466, 209991341, 209903932, 209893247, 209879062, 209857593, 209836140, 209809127, 209766517, 209706062, 209656003, 209523274, 209844642, 209814379, 209814344, 209812864, 209812862, 209810783, 209810758, 209758633, 209758629, 209757357, 209757355, 209757346, 209285476, 209197621, 207927891, 207781677, 207773140, 207540440, 207093146, 207066166, 206990809);
+        List<Integer> integers2 = Arrays.asList(209197621,209285476,209523274,209656003,209683941,209706062,209757346,209757355,209757357,209758629,209758633,209766517,209809127,209810758,209810783,209812862,209812864,209814344,209814379,209836140,209844642,209857593,209879062,209893247,209903932,209936193,209991341,210006466,210065262,210089186,210165856,210193071,210247386,210250779,210356242);
+        Sets.SetView difference = Sets.difference(new HashSet(integers), new HashSet<>(integers2));
+        System.out.println(difference);
 
 
+    }
 
 
-
-
-
-
-
-
-
-
-        BigDecimal a1 = new BigDecimal("48.00");
-        BigDecimal b1 = new BigDecimal("8000.00");
-        System.out.println("~~~~~~"+a1.divide(b1, 5, HALF_UP).setScale(5,HALF_UP).toPlainString());
-
-
-        System.out.println(new BigDecimal("2.3333").toPlainString());
-        double a = 2.333;
-        System.out.println(new BigDecimal(a).doubleValue());
-        System.out.println(new BigDecimal("2.3333").toPlainString());
-        System.out.println(new BigDecimal("2.236").multiply(new BigDecimal("1")).setScale(2, HALF_UP).doubleValue());
-        System.out.println(new BigDecimal("2.232").setScale(2, HALF_UP).stripTrailingZeros());
-        System.out.println(new BigDecimal("2.99").setScale(2, HALF_UP).stripTrailingZeros());
-        System.out.println(new BigDecimal("2.89").setScale(2, HALF_UP).stripTrailingZeros());
-
+    public static String parseOrderId(String message) {
+        if (StringUtils.isBlank(message) ||
+                !message.contains("[") ||
+                !message.contains("]")) return null;
+        return message.substring(message.indexOf("[") + 1, message.indexOf("]"));
     }
 
 }
